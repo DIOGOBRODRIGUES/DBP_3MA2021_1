@@ -23,4 +23,19 @@ CREATE TABLE Aluno (
 );
 DESC Aluno;
 
+INSERT INTO Curso (tot_cred, nome_curso, cod_coord) 
+VALUES
+(200, "Egenharia da Computacao", 1),
+(320, "Egenharia Eletrica", 1),
+(300, "Ciencia da Computacao", 1),
+(150, "Sistema de Informacao", 2),
+(140, "Egenharia Civil", 3);
+
+INSERT INTO Aluno (cod_curso, dat_nasc, tot_cred, mgp, nom_alun, email) 
+VALUES
+(2, '2000-10-5', 60, 8.75, 'Diogo Rodrigues', 'diogo@gmail.com'),
+(3, '2001-10-5', 60, 8.75, 'Andrea', 'andrea@gmail.com'),
+(Null, '2001-10-5', 60, 8.75, 'Pedro', 'Pedro@gmail.com'),
+(Null, '2001-10-5', 60, 8.75, 'Alexandre', 'alexandre@gmail.com')
+;
 
