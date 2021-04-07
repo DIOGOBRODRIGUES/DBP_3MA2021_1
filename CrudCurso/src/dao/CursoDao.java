@@ -23,7 +23,7 @@ public class CursoDao {
         PreparedStatement pstm = null;
         
         try {
-            pstm = con.prepareStatement("insert into Curso (tot_cred, nome_curso, cood_curso) values (?, ?, ?)");
+            pstm = con.prepareStatement("insert into Curso (tot_cred, nome_curso, cod_coord) values (?, ?, ?)");
             pstm.setString(1,Integer.toString(curso.getTot_cred()));
             pstm.setString(2, curso.getNome_curso());
             pstm.setInt(3, curso.getCood_curso());
@@ -32,7 +32,7 @@ public class CursoDao {
             JOptionPane.showMessageDialog(null, "Adicionado com Sucesso", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
                     
         } catch (SQLException ErroSql) {
-            JOptionPane.showMessageDialog(null, "Erro ao adicionar ao Banco", "Erro", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Erro ao adicionar ao Banco"+ErroSql, "Erro", JOptionPane.ERROR_MESSAGE);
         }
         
         finally{
