@@ -39,17 +39,19 @@ public class Conexao {
     
     
      public static void closeConnection(Connection con, PreparedStatement pstm){
-        try {
-            if(con!= null)
-                con.close();
+         closeConnection(con);
+         try {
+            if(pstm!= null)
+                pstm.close();
         } catch (SQLException ErroSql) {
             throw new RuntimeException("Erro!não foi possivel PreparedStatement"+ErroSql);
         }
     }
      public static void closeConnection(Connection con, ResultSet rs){
-        try {
-            if(con!= null)
-                con.close();
+        closeConnection(con);
+         try {
+            if(rs!= null)
+                rs.close();
         } catch (SQLException ErroSql) {
             throw new RuntimeException("Erro!não foi possivel ResultSet"+ErroSql);
         }
