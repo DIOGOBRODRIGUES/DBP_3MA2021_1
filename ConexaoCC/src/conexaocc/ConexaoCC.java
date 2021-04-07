@@ -30,9 +30,9 @@ public class ConexaoCC {
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/aula5","root","root");
             System.out.println("Conectou o banco de dados");
         } catch (SQLException ex) {
-            System.out.println("Erro: não conectou no DB");
+            System.out.println("Erro: não conectou no DB"+ex);
         } catch(ClassNotFoundException ex){
-            System.out.println("Erro não encontrou o DB");
+            System.out.println("Erro não encontrou o DB"+ex);
         }
         return con;
     }
@@ -44,7 +44,7 @@ public class ConexaoCC {
                 System.out.println("Desconectou do banco de dados");
             }
         } catch (SQLException ex) {
-            System.out.println("Não consegiu desconectar o banco");
+            System.out.println("Não consegiu desconectar o banco"+ex);
         }
         }
     
