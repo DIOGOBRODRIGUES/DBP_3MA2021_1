@@ -26,3 +26,16 @@ DELIMITER ;
 
 CALL verEmail(1);
 
+/**************************************************/
+DELIMITER //
+CREATE PROCEDURE alunoCurso(IN codAluno SMALLINT)
+BEGIN
+	SELECT A.nom_alun, C.nome_curso 
+    FROM aluno AS A
+    INNER JOIN curso AS C
+    ON A.cod_curso = C.cod_curso
+    WHERE A.mat_aluno = codAluno;
+END//
+DELIMITER ;
+
+CALL alunoCurso(2);
