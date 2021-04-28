@@ -38,4 +38,4 @@ BEGIN
 END//
 DELIMITER ;
 
-CALL alunoCurso(2);
+CALL alunoCurso(1);

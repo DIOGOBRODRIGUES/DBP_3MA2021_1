@@ -26,7 +26,7 @@ DESC Aluno;
 INSERT INTO Curso (tot_cred, nome_curso, cod_coord) 
 VALUES
 (200, "Egenharia da Computacao", 1),
-(320, "Egenharia Eletrica", 1),
+(320, "Engenharia Eletrica", 1),
 (300, "Ciencia da Computacao", 1),
 (150, "Sistema de Informacao", 2),
 (140, "Egenharia Civil", 3);
@@ -39,7 +39,7 @@ VALUES
 (Null, '2001-10-5', 60, 8.75, 'Pedro', 'Pedro@gmail.com'),
 (Null, '2001-10-5', 60, 8.75, 'Alexandre', 'alexandre@gmail.com')
 ;
-Select * from Curso;
+Select * from Aluno;
 /*1  Construa um SELECT que mostre todos os alunos e o respectivo nome do curso no  qual ele está matriculado.
 */
 SELECT nom_alun, nome_curso FROM Aluno LEFT JOIN Curso
