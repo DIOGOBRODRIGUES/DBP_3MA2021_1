@@ -39,7 +39,7 @@ VALUES
 (Null, '2001-10-5', 60, 8.75, 'Pedro', 'Pedro@gmail.com'),
 (Null, '2001-10-5', 60, 8.75, 'Alexandre', 'alexandre@gmail.com')
 ;
-Select * from Aluno;
+Select * from Curso;
 /*1  Construa um SELECT que mostre todos os alunos e o respectivo nome do curso no  qual ele está matriculado.
 */
 SELECT nom_alun, nome_curso FROM Aluno LEFT JOIN Curso

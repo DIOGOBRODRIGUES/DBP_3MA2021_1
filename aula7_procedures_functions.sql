@@ -39,3 +39,18 @@ END//
 DELIMITER ;
 
 CALL alunoCurso(1);
+
+
+/*******************************/
+DELIMITER %%
+CREATE PROCEDURE teste_out(IN id INT, OUT cursoRef VARCHAR(30))
+BEGIN
+	SELECT nome_curso
+    INTO cursoRef
+    FROM curso
+    WHERE cod_curso = id;
+END %%
+DELIMITER ;
+
+CALL teste_out(3, @cursoR);
+SELECT @cursoR;
