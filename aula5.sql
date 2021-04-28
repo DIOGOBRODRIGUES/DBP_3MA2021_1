@@ -31,6 +31,7 @@ VALUES
 (150, "Sistema de Informacao", 2),
 (140, "Egenharia Civil", 3);
 
+
 INSERT INTO Aluno (cod_curso, dat_nasc, tot_cred, mgp, nom_alun, email) 
 VALUES
 (2, '2000-10-5', 60, 8.75, 'Diogo Rodrigues', 'diogo@gmail.com'),
@@ -38,7 +39,7 @@ VALUES
 (Null, '2001-10-5', 60, 8.75, 'Pedro', 'Pedro@gmail.com'),
 (Null, '2001-10-5', 60, 8.75, 'Alexandre', 'alexandre@gmail.com')
 ;
-Select * from Aluno;
+Select * from Curso;
 /*1  Construa um SELECT que mostre todos os alunos e o respectivo nome do curso no  qual ele está matriculado.
 */
 SELECT nom_alun, nome_curso FROM Aluno LEFT JOIN Curso
@@ -47,3 +48,4 @@ SELECT nom_alun, nome_curso FROM Aluno LEFT JOIN Curso
 /*2. Construa um SELECT que mostre todos os alunos matriculados
 (mostrar no select o nome do aluno e o nome do curso).
 */
+
