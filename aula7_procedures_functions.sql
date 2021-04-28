@@ -14,3 +14,15 @@ RETURN a*b;
 
 SELECT fn_teste(2.5, 4) AS Result;
 
+DELIMITER $$
+CREATE PROCEDURE verEmail(codAluno SMALLINT)
+BEGIN
+	SELECT CONCAT('O e-mail do aluno é ', email) AS Email 
+    FROM aluno 
+    WHERE mat_aluno = codAluno;
+    SELECT 'PROCEDURE executado com sucesso!';
+END$$
+DELIMITER ;
+
+CALL verEmail(1);
+
