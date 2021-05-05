@@ -14,15 +14,21 @@ BEGIN
 	END LOOP loop_teste;
     SELECT soma;
 END //
-DELIMITER ;*/
+DELIMITER ;
+CALL acumula (10);
+*/
 
 /* REPEAT ***********************/
-
+DROP PROCEDURE IF EXISTS acumula_repita;
 DELIMITER //
 CREATE PROCEDURE acumula_repita(limite TINYINT UNSIGNED)
-BEGIN
+main: BEGIN
 	DECLARE contador TINYINT UNSIGNED DEFAULT 0;
     DECLARE soma INT DEFAULT 0;
+    IF limite < 1 THEN
+		SELECT 'O Valor deve ser maior que zero' AS zero;
+        LEAVE main;
+	END IF;
     REPEAT
 		SET contador = contador + 1;
         SET soma = soma + contador;
@@ -31,3 +37,6 @@ BEGIN
     SELECT soma;
 END//
 DELIMITER ;
+CALL acumula_repita(10);
+
+
