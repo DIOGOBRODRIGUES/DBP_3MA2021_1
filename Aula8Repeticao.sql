@@ -19,6 +19,7 @@ CALL acumula (10);
 */
 
 /* REPEAT ***********************/
+/*
 DROP PROCEDURE IF EXISTS acumula_repita;
 DELIMITER //
 CREATE PROCEDURE acumula_repita(limite TINYINT UNSIGNED)
@@ -38,5 +39,19 @@ main: BEGIN
 END//
 DELIMITER ;
 CALL acumula_repita(10);
+*/
 
+/* WHILE ****/
+DELIMITER //
+CREATE PROCEDURE acumula_while (limite TINYINT UNSIGNED)
+BEGIN
+	DECLARE contador TINYINT UNSIGNED DEFAULT 0;
+    DECLARE soma INT DEFAULT 0;
+    WHILE contador < limite DO
+		SET contador = contador + 1;
+        SET soma = soma + contador;
+	END WHILE;
+    SELECT soma;
+END //
+DELIMITER ;
 
