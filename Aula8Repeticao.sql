@@ -1,5 +1,5 @@
 /* LOOP*****************/
-
+/*
 DELIMITER //
 CREATE PROCEDURE acumula (limite int)
 BEGIN
@@ -14,4 +14,20 @@ BEGIN
 	END LOOP loop_teste;
     SELECT soma;
 END //
+DELIMITER ;*/
+
+/* REPEAT ***********************/
+
+DELIMITER //
+CREATE PROCEDURE acumula_repita(limite TINYINT UNSIGNED)
+BEGIN
+	DECLARE contador TINYINT UNSIGNED DEFAULT 0;
+    DECLARE soma INT DEFAULT 0;
+    REPEAT
+		SET contador = contador + 1;
+        SET soma = soma + contador;
+	UNTIL contador >= limite
+    END REPEAT;
+    SELECT soma;
+END//
 DELIMITER ;
