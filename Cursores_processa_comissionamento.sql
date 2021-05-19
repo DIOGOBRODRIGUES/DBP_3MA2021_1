@@ -19,7 +19,7 @@ BEGIN
     DECLARE busca_pedido CURSOR FOR 
 		SELECT n_numevenda, n_totavenda, n_numevende FROM comvenda
         WHERE d_datavenda BETWEEN data_inicial AND data_final
-        AND n_totalvenda > 0;
+        AND n_totavenda > 0;
         
 	#Faço aqui um tratamento para o banco não executar o loop quando ele terminar
     #evitando que retorne qualquer erro
@@ -71,4 +71,12 @@ BEGIN
         SET aux  = aux + 1;
 	END LOOP vendas;
     
+    SET total_processado = aux;
+    
+    #fecho o cursor
+    CLOSE busca_pedido;
 END $$
+DELIMITER ;
+
+CALL processa_comissionamento('2015-01-01', '2015-05-19', @a);
+SELECT @a;
