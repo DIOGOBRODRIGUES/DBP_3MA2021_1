@@ -83,3 +83,6 @@ alter table comivenda add constraint fk_comivenda_comprodu
 				references comprodu (n_numeprodu)
 					on delete no action 
 					on update no action;
+					
+alter table comvende add n_porcvende float(10,2);
+alter table comvenda add n_vcomvenda float(10,2);
